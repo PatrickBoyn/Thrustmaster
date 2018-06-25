@@ -19,5 +19,12 @@ public class Rocket : MonoBehaviour {
         {
             print("Spacebar was pressed!");
         }
+        if (Input.GetKey(KeyCode.A))
+        {
+            print("Rotating Left!");
+        }else if (Input.GetKey(KeyCode.D))
+        {
+            print("Rotating Right!");
+        }
     }
 }
