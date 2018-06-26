@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour {
@@ -13,9 +14,25 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ProcessUpdate();
-	}
-    void ProcessUpdate()
+        Rotate();
+        Thrust();
+    }
+
+    void Rotate()
+    {
+        rigidbody.freezeRotation = true;
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.forward);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-Vector3.forward);
+        }
+        rigidbody.freezeRotation = false;
+    }
+
+    private void Thrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
@@ -24,17 +41,10 @@ public class Rocket : MonoBehaviour {
             {
                 audioSource.Play();
             }
-            else
-            {
-                audioSource.Stop();
-            }
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            transform.Rotate(Vector3.forward);
-        }else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(-Vector3.forward);
+            audioSource.Stop();
         }
     }
 }
