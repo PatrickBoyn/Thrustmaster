@@ -7,6 +7,9 @@ public class Rocket : MonoBehaviour {
     Rigidbody rigidbody;
     AudioSource audioSource; 
 
+    enum State {Alive, Dying, Transcending}
+    State state = State.Alive;
+
 	// Use this for initializationa
 	void Start () {
         rigidbody = GetComponent<Rigidbody>();
@@ -27,14 +30,30 @@ public class Rocket : MonoBehaviour {
                     print("Friendly");
                 break;
             case "Finish":
+                state = State.Transcending;
                 print("Change level.");
-                SceneManager.LoadScene(1);
+                Invoke("LoadNextScene", 1f);
                 break;
             default:
+                state = State.Dying;
+                if (state == State.Dying)
+                {
+                    rcsThrust = 0f;
+                }
                 print("Enemy");
-                SceneManager.LoadScene(0);
+                Invoke("ReturnToBeginning", 1f);
                 break;
         }
+    }
+
+    private void ReturnToBeginning()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(1);
     }
 
     void Rotate()
