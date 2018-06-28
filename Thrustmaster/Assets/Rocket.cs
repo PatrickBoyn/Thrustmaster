@@ -3,7 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
     [SerializeField]float rcsThrust = 100f;
-    [SerializeField]float mainThrust = 1; 
+    [SerializeField]float mainThrust = 1;
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] AudioClip win;
+    [SerializeField] AudioClip death;
     Rigidbody rigidbody;
     AudioSource audioSource; 
 
@@ -20,8 +23,8 @@ public class Rocket : MonoBehaviour {
 	void Update () {
         if (state == State.Alive)
         {
-           Rotate();
-           Thrust();
+           RespondToRotateInput();
+           RespondToThrustInput();
         }
     }
 
@@ -30,15 +33,27 @@ public class Rocket : MonoBehaviour {
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                    print("Friendly");
+                print("Friendly");
                 break;
             case "Finish":
                 state = State.Transcending;
+
+                if (state == State.Transcending)
+                {
+                    audioSource.PlayOneShot(win);
+                }
+
                 print("Change level.");
                 Invoke("LoadNextScene", 1f);
                 break;
             default:
                 state = State.Dying;
+
+                if(state == State.Dying)
+                {
+                    audioSource.PlayOneShot(death);
+                }
+
                 print("Enemy");
                 Invoke("ReturnToBeginning", 1f);
                 break;
@@ -55,7 +70,7 @@ public class Rocket : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
-    void Rotate()
+    void RespondToRotateInput()
     {
         rigidbody.freezeRotation = true;
         if (Input.GetKey(KeyCode.A))
@@ -71,7 +86,7 @@ public class Rocket : MonoBehaviour {
         rigidbody.freezeRotation = false;
     }
 
-    private void Thrust()
+    private void RespondToThrustInput()
     {
         if (state != State.Alive)
         {
@@ -79,17 +94,22 @@ public class Rocket : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidbody.AddRelativeForce(Vector3.up * mainThrust);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-            if(state == State.Dying)
-            {
-                audioSource.Stop();
-            }
+            ApplyThrust();
         }
         if (Input.GetKeyUp(KeyCode.Space))
+        {
+            audioSource.Stop();
+        }
+    }
+
+    private void ApplyThrust()
+    {
+        rigidbody.AddRelativeForce(Vector3.up * mainThrust);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+        if (state == State.Dying)
         {
             audioSource.Stop();
         }

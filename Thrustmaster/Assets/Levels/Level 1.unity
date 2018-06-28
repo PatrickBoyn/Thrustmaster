@@ -579,6 +579,26 @@ Prefab:
       propertyPath: mainThrust
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82561051749496054, guid: 2b476282052b8f34fa921cf377e3263c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
+        type: 2}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: b6f2cded88fa6be4dbf73a9b754bc4ed, type: 3}
+    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
+        type: 2}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: f4c0890090727d647863135fa4d4b8a4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b476282052b8f34fa921cf377e3263c, type: 2}
   m_IsPrefabParent: 0
