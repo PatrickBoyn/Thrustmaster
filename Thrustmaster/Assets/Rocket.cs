@@ -18,8 +18,11 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Rotate();
-        Thrust();
+        if (state == State.Alive)
+        {
+           Rotate();
+           Thrust();
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -36,10 +39,6 @@ public class Rocket : MonoBehaviour {
                 break;
             default:
                 state = State.Dying;
-                if (state == State.Dying)
-                {
-                    rcsThrust = 0f;
-                }
                 print("Enemy");
                 Invoke("ReturnToBeginning", 1f);
                 break;
