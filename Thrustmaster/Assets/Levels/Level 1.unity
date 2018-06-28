@@ -599,6 +599,11 @@ Prefab:
       propertyPath: death
       value: 
       objectReference: {fileID: 8300000, guid: f4c0890090727d647863135fa4d4b8a4, type: 3}
+    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
+        type: 2}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c5673379b1a3a14bb230920a1891293, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b476282052b8f34fa921cf377e3263c, type: 2}
   m_IsPrefabParent: 0
