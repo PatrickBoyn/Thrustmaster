@@ -73,12 +73,20 @@ public class Rocket : MonoBehaviour {
 
     private void Thrust()
     {
+        if (state != State.Alive)
+        {
+            return;
+        }
         if (Input.GetKey(KeyCode.Space))
         {
             rigidbody.AddRelativeForce(Vector3.up * mainThrust);
             if (!audioSource.isPlaying)
             {
                 audioSource.Play();
+            }
+            if(state == State.Dying)
+            {
+                audioSource.Stop();
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
