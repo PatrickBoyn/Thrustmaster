@@ -36,28 +36,28 @@ public class Rocket : MonoBehaviour {
                 print("Friendly");
                 break;
             case "Finish":
-                state = State.Transcending;
-
-                if (state == State.Transcending)
-                {
-                    audioSource.PlayOneShot(win);
-                }
-
-                print("Change level.");
-                Invoke("LoadNextScene", 1f);
+                startSuccessSequence();
                 break;
             default:
-                state = State.Dying;
-
-                if(state == State.Dying)
-                {
-                    audioSource.PlayOneShot(death);
-                }
-
-                print("Enemy");
-                Invoke("ReturnToBeginning", 1f);
+                startDeathSequence();
                 break;
         }
+    }
+
+    private void startDeathSequence()
+    {
+        state = State.Dying;
+        audioSource.Stop();
+        audioSource.PlayOneShot(death);
+        Invoke("ReturnToBeginning", 1f);
+    }
+
+    private void startSuccessSequence()
+    {
+        state = State.Transcending;
+
+        audioSource.PlayOneShot(win);
+        Invoke("LoadNextScene", 1f);
     }
 
     private void ReturnToBeginning()

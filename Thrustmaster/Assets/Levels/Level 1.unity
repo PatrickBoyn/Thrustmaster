@@ -554,56 +554,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 82561051749496054, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0cdb546eeabcc924cbe9c3535c386a72, type: 3}
-    - target: {fileID: 82561051749496054, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54169376154480870, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 54169376154480870, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_Drag
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: mainThrust
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82561051749496054, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: b6f2cded88fa6be4dbf73a9b754bc4ed, type: 3}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: death
-      value: 
-      objectReference: {fileID: 8300000, guid: f4c0890090727d647863135fa4d4b8a4, type: 3}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: win
-      value: 
-      objectReference: {fileID: 8300000, guid: 5c5673379b1a3a14bb230920a1891293, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b476282052b8f34fa921cf377e3263c, type: 2}
   m_IsPrefabParent: 0
