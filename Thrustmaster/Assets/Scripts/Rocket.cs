@@ -56,6 +56,7 @@ public class Rocket : MonoBehaviour {
         state = State.Dying;
         audioSource.Stop();
         audioSource.PlayOneShot(death);
+        deathParticles.Play();
         Invoke("ReturnToBeginning", 1f);
     }
 
@@ -64,6 +65,7 @@ public class Rocket : MonoBehaviour {
         state = State.Transcending;
 
         audioSource.PlayOneShot(win);
+        winParticles.Play();
         Invoke("LoadNextScene", 1f);
     }
 
@@ -106,6 +108,7 @@ public class Rocket : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Space))
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
@@ -116,6 +119,7 @@ public class Rocket : MonoBehaviour {
         {
             audioSource.PlayOneShot(mainEngine);
         }
+        mainEngineParticles.Play();
         if (state == State.Dying)
         {
             audioSource.Stop();
