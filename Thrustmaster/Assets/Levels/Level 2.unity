@@ -710,6 +710,11 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
+        type: 2}
+      propertyPath: mainThrust
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b476282052b8f34fa921cf377e3263c, type: 2}
   m_IsPrefabParent: 0
@@ -994,7 +999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 0, y: 6, z: 0}
-  movementFactor: 0.564
+  period: 3
+  movementFactor: 1
 --- !u!1001 &1464868734
 Prefab:
   m_ObjectHideFlags: 0
