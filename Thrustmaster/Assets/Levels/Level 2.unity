@@ -647,36 +647,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 82561051749496054, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0cdb546eeabcc924cbe9c3535c386a72, type: 3}
-    - target: {fileID: 82561051749496054, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54169376154480870, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 54169376154480870, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: m_Drag
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: mainThrust
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114076876664392664, guid: 2b476282052b8f34fa921cf377e3263c,
-        type: 2}
-      propertyPath: rcsThrust
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b476282052b8f34fa921cf377e3263c, type: 2}
   m_IsPrefabParent: 0
