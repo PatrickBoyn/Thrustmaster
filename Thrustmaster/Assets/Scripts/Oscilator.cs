@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [DisallowMultipleComponent]
 public class Oscilator : MonoBehaviour {
@@ -9,6 +10,7 @@ public class Oscilator : MonoBehaviour {
 	[SerializeField] float period = 2f;
 	[Range(0,1)]
 	[SerializeField]
+
 	float movementFactor;
 
 	Vector3 startingPos;
@@ -20,8 +22,9 @@ public class Oscilator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		float cycles = Time.time /period;
+		if(period <= Mathf.Epsilon) { return; }
+		float cycles = Time.time / period;
+
 		const float tau = Mathf.PI * 2;
 		float rawSin = Mathf.Sin(cycles * tau);
 		print(rawSin);
