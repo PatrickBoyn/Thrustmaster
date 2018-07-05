@@ -911,15 +911,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4968407070874678, guid: 09e180464ae971146a865d15391e5ef9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.7
+      value: 14.07
       objectReference: {fileID: 0}
     - target: {fileID: 4968407070874678, guid: 09e180464ae971146a865d15391e5ef9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.9
+      value: 6.95
       objectReference: {fileID: 0}
     - target: {fileID: 4968407070874678, guid: 09e180464ae971146a865d15391e5ef9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.2
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 4968407070874678, guid: 09e180464ae971146a865d15391e5ef9, type: 2}
       propertyPath: m_LocalRotation.x
