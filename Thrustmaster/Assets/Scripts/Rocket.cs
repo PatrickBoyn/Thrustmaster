@@ -12,6 +12,9 @@ public class Rocket : MonoBehaviour {
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] float levelLoadDelay = 2f;
 
+
+    bool enableCollisions = true;
+
     Rigidbody rigidbody;
     AudioSource audioSource; 
 
@@ -30,13 +33,14 @@ public class Rocket : MonoBehaviour {
         {
            RespondToRotateInput();
            RespondToThrustInput();
+           respondToDebugKeys();
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
 
-        if(state != State.Alive) { return; }
+        if(state != State.Alive || !enableCollisions) { return; }
 
         switch (collision.gameObject.tag)
         {
@@ -125,5 +129,14 @@ public class Rocket : MonoBehaviour {
         {
             audioSource.Stop();
         }
+    }
+    void respondToDebugKeys(){
+            if(Debug.isDebugBuild){
+                if(Input.GetKeyDown(KeyCode.L)){
+                    LoadNextScene();
+                }else if(Input.GetKeyDown(KeyCode.C)){
+                    enableCollisions = !enableCollisions;
+                }
+           }
     }
 }
