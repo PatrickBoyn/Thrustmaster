@@ -31,9 +31,9 @@ public class Rocket : MonoBehaviour {
 	void Update () {
         if (state == State.Alive)
         {
+           respondToDebugKeys();
            RespondToRotateInput();
            RespondToThrustInput();
-           respondToDebugKeys();
         }
     }
 
@@ -45,7 +45,6 @@ public class Rocket : MonoBehaviour {
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                print("Friendly");
                 break;
             case "Finish":
                 startSuccessSequence();
@@ -81,7 +80,13 @@ public class Rocket : MonoBehaviour {
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex += 1;
+        SceneManager.LoadScene(nextSceneIndex);
+        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings){
+            // nextSceneIndex = 0;
+            SceneManager.LoadScene(0);
+        }
     }
 
     void RespondToRotateInput()
