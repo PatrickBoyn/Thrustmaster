@@ -82,11 +82,10 @@ public class Rocket : MonoBehaviour {
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex += 1;
-        SceneManager.LoadScene(nextSceneIndex);
-        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings){
-            // nextSceneIndex = 0;
-            SceneManager.LoadScene(0);
+            if(nextSceneIndex == SceneManager.sceneCountInBuildSettings){
+                nextSceneIndex = 0;
         }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     void RespondToRotateInput()
